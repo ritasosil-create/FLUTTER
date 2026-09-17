@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'tela_principal.dart';
 
@@ -27,12 +26,17 @@ class _TelaLoginState extends State<TelaLogin> {
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text(
-            'Usuário ou senha inválidos!',
-          ),
+          content: Text('Usuário ou senha inválidos!'),
         ),
       );
     }
+  }
+
+  @override
+  void dispose() {
+    usuarioController.dispose();
+    senhaController.dispose();
+    super.dispose();
   }
 
   @override
@@ -41,13 +45,10 @@ class _TelaLoginState extends State<TelaLogin> {
       appBar: AppBar(
         title: const Text('Login'),
       ),
-
       body: Padding(
-        padding: const EdgeInsets.all(24),
-
+        padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-
           children: [
             const Icon(
               Icons.person,
@@ -65,7 +66,7 @@ class _TelaLoginState extends State<TelaLogin> {
               ),
             ),
 
-            const SizedBox(height: 20),
+            const SizedBox(height: 16),
 
             TextField(
               controller: senhaController,
@@ -77,7 +78,7 @@ class _TelaLoginState extends State<TelaLogin> {
               ),
             ),
 
-            const SizedBox(height: 25),
+            const SizedBox(height: 24),
 
             SizedBox(
               width: double.infinity,
@@ -86,18 +87,9 @@ class _TelaLoginState extends State<TelaLogin> {
                 child: const Text('ENTRAR'),
               ),
             ),
-
-            const SizedBox(height: 20),
-
-            const Text(
-              'Usuário: admin\nSenha: 1234',
-              textAlign: TextAlign.center,
-            ),
           ],
         ),
       ),
     );
   }
 }
-```
-

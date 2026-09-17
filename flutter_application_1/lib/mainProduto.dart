@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '/tela_principal.dart';
+import 'tela_principal2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,6 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const TelaPrincipal(),
-      
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'tela_lista_produtos.dart';
+import 'tela_lista_produto.dart';
 
 class TelaPrincipal extends StatelessWidget {
   const TelaPrincipal({super.key});
@@ -7,18 +7,16 @@ class TelaPrincipal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Tela Principal'),
-      ),
+      appBar: AppBar(title: Text('Tela Principal')),
       body: Center(
         child: ElevatedButton(
-          child: const Text('Ir para Lista de Produtos'),
+          child: Text('Ir para Lista de Produtos'),
           onPressed: () {
+            // Navegação para a próxima tela
+            //Navigator.pushNamed(context, '/lista_produtos');
             Navigator.push(
               context,
-              MaterialPageRoute(
-                builder: (context) => const TelaListaProdutos(),
-              ),
+              MaterialPageRoute(builder: (context) => TelaListaProdutos()),
             );
           },
         ),

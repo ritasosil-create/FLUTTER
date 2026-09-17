@@ -1,4 +1,3 @@
-// tela_detalhes_produto.dart
 import 'package:flutter/material.dart';
 
 class TelaDetalhesProduto extends StatelessWidget {
